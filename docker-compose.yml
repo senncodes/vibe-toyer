@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  bookrentalapi:
+    image: bookrentalapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=your_sql_server;Database=BookRentalDb;User Id=sa;Password=your_password;
